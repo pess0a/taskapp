@@ -1,4 +1,4 @@
-package com.pessoadev.simpletodolist
+package com.pessoadev.taskapp
 
 import org.junit.Test
 

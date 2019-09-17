@@ -1,11 +1,11 @@
-package com.pessoadev.simpletodolist.task
+package com.pessoadev.taskapp.task
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.pessoadev.simpletodolist.R
-import com.pessoadev.simpletodolist.model.Task
+import com.pessoadev.taskapp.R
+import com.pessoadev.taskapp.model.Task
 import kotlinx.android.synthetic.main.layout_task_list.view.*
 
 class TaskAdapter(private val taskList: List<Task>) :

@@ -1,10 +1,10 @@
-package com.pessoadev.simpletodolist.repository
+package com.pessoadev.taskapp.repository
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.pessoadev.simpletodolist.model.Task
+import com.pessoadev.taskapp.model.Task
 
 @Dao
 interface TaskDao {

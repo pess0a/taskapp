@@ -1,9 +1,9 @@
-package com.pessoadev.simpletodolist.di
+package com.pessoadev.taskapp.di
 
 import androidx.room.Room
-import com.pessoadev.simpletodolist.repository.TaskDatabase
-import com.pessoadev.simpletodolist.repository.TaskRepository
-import com.pessoadev.simpletodolist.task.TaskViewModel
+import com.pessoadev.taskapp.repository.TaskDatabase
+import com.pessoadev.taskapp.repository.TaskRepository
+import com.pessoadev.taskapp.task.TaskViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

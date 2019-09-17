@@ -1,9 +1,9 @@
-package com.pessoadev.simpletodolist.task
+package com.pessoadev.taskapp.task
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.pessoadev.simpletodolist.repository.TaskRepository
-import com.pessoadev.simpletodolist.model.Task
+import com.pessoadev.taskapp.repository.TaskRepository
+import com.pessoadev.taskapp.model.Task
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -16,11 +16,16 @@ class TaskViewModel(private val taskRepository: TaskRepository) : ViewModel(), C
     var allTasks: MutableLiveData<List<Task>> = MutableLiveData()
 
     fun loadTasks() {
-        launch {
-            taskRepository.allTasks().apply {
-                allTasks.postValue(this.reversed())
+        try {
+            launch {
+                taskRepository.allTasks().apply {
+                    allTasks.postValue(this.reversed())
+                }
             }
+        } catch (e : Exception) {
+            e.printStackTrace()
         }
+
     }
 
     fun insertTask(task: String) {

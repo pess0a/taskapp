@@ -1,7 +1,6 @@
-package com.pessoadev.simpletodolist.task
+package com.pessoadev.taskapp.task
 
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -9,7 +8,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.pessoadev.simpletodolist.R
+import com.pessoadev.taskapp.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.dialog_new_task.view.*
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -31,7 +30,7 @@ class TaskActivity : AppCompatActivity() {
 
         viewModel.allTasks.observe(this, Observer { taskList ->
             recyclerViewTask.layoutManager = LinearLayoutManager(this)
-            recyclerViewTask.adapter = TaskAdapter(taskList).apply { adapter = this }
+            recyclerViewTask.adapter = TaskAdapter(taskList ).apply { adapter = this }
             progressBarTask.visibility = View.INVISIBLE
         })
 

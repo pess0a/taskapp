@@ -1,4 +1,4 @@
-package com.pessoadev.simpletodolist.model
+package com.pessoadev.taskapp.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

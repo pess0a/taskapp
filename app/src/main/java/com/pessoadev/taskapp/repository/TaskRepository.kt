@@ -1,6 +1,6 @@
-package com.pessoadev.simpletodolist.repository
+package com.pessoadev.taskapp.repository
 
-import com.pessoadev.simpletodolist.model.Task
+import com.pessoadev.taskapp.model.Task
 
 class TaskRepository (private val taskDao: TaskDao){
 

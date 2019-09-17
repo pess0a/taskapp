@@ -1,7 +1,7 @@
-package com.pessoadev.simpletodolist
+package com.pessoadev.taskapp
 
 import android.app.Application
-import com.pessoadev.simpletodolist.di.todo
+import com.pessoadev.taskapp.di.todo
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
