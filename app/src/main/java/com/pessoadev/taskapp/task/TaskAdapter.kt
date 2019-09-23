@@ -8,8 +8,9 @@ import com.pessoadev.taskapp.R
 import com.pessoadev.taskapp.model.Task
 import kotlinx.android.synthetic.main.layout_task_list.view.*
 
-class TaskAdapter(private val taskList: List<Task>) :
+class TaskAdapter :
     RecyclerView.Adapter<TaskAdapter.ViewHolder>() {
+    private val taskList: MutableList<Task> = mutableListOf()
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -27,5 +28,11 @@ class TaskAdapter(private val taskList: List<Task>) :
 
     override fun getItemCount(): Int {
         return taskList.size
+    }
+
+    fun setData(newTaskList : List<Task>) {
+        taskList.clear()
+        taskList.addAll(newTaskList)
+        notifyDataSetChanged()
     }
 }

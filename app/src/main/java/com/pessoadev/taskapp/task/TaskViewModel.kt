@@ -9,9 +9,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
-class TaskViewModel(private val taskRepository: TaskRepository) : ViewModel(), CoroutineScope by CoroutineScope(
-    Dispatchers.Main
-) {
+class TaskViewModel(private val taskRepository: TaskRepository) : ViewModel(),
+    CoroutineScope by CoroutineScope(Dispatchers.Main) {
 
     var allTasks: MutableLiveData<List<Task>> = MutableLiveData()
 

@@ -23,14 +23,15 @@ class TaskActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        recyclerViewTask.layoutManager = LinearLayoutManager(this)
+        recyclerViewTask.adapter = TaskAdapter().apply { adapter = this }
 
         viewModel.loadTasks().also {
             progressBarTask.visibility = View.VISIBLE
         }
 
         viewModel.allTasks.observe(this, Observer { taskList ->
-            recyclerViewTask.layoutManager = LinearLayoutManager(this)
-            recyclerViewTask.adapter = TaskAdapter(taskList ).apply { adapter = this }
+            adapter.setData(taskList)
             progressBarTask.visibility = View.INVISIBLE
         })
 
@@ -43,12 +44,12 @@ class TaskActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.action_new -> openDialog()
+            R.id.action_new -> newTaskDialog()
         }
         return true
     }
 
-    private fun openDialog() {
+    private fun newTaskDialog() {
         val layout = layoutInflater.inflate(R.layout.dialog_new_task, null)
         AlertDialog.Builder(this).setView(layout)
             .setPositiveButton("Create") { _, _ ->
